@@ -27,9 +27,11 @@ jobs:
           pip3 install --upgrade pip
           pip3 install -r requirements.txt
 
-      - name: next step
-        shell: python
+      - name: run chat-ops
         run: |
-          # replace this with a script
-          print(2)
+          python chat_ops.py
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
     

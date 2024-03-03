@@ -1,11 +1,5 @@
 name: ghapi
-on:
-  issue_comment
-
-permissions:
-  contents: read
-  issues: write
-  pull-requests: write
+on: issue_comment
 
 jobs:
   ghapi:

@@ -1,5 +1,5 @@
 name: ghapi
-on: issue_comment
+on: pull_request_review_comment
 
 permissions:
   issues: write
@@ -30,7 +30,7 @@ jobs:
         run: |
           python chat_ops.py
         env:
-          PR_NUMBER: ${{ github.event.issue.number }}
+          # PR_NUMBER: ${{ github.event.issue.number }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
     
